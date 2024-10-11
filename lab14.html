@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
-    <div id = "username">
+    <div id="username">
         Hello World's Phone Book
     </div>
-    <div id = "proflie">
-        <img src="https://th.bing.com/th/id/OIP.XdVYZebQAkFEudshXmt4mwHaFj?w=242&h=181&c=7&r=0&o=5&pid=1.7"/>
+    <div id="proflie">
+        <img src="https://th.bing.com/th/id/OIP.XdVYZebQAkFEudshXmt4mwHaFj?w=242&h=181&c=7&r=0&o=5&pid=1.7" id = "pictu"/>
     </div>
-    <div>
-        Set the username<input type="text" placeholder="Enter username"><button>set</button>
+    <div class="grid1">
+        <div>Set the username</div>
+        <div><input id="txtname" type="text" placeholder="Enter username"></div>
+        <div><button onclick="setName()">set</button></div>
 
     </div>
-    <div>
-        Set the proflie image URL<input type="text" placeholder="Enter Image URL"><button>set</button>
+    <div class="grid1">
+        <div>Set the proflie image URL</div>
+        <div><input type="text" placeholder="Enter Image URL" id="txturl"></div>
+        <div><button onclick="setimage()">set</button></div>
     </div>
-    <div>
+    <div id="phonenum">
         Phone Number List
     </div>
-    <div>
-        <input type="text"placeholder = "name">
-        <input type="text"placeholder = "Tel">
-        <button>ADD</button>
-        <button>EXPORT</button>
+    <div class="grid2">
+        <div><input type="text" placeholder="name" id="name"></div>
+        <div><input type="text" placeholder="Tel" id="tell"></div>
+        <div><button onclick="add_name()">ADD</button></div>
+        <div><button>EXPORT</button></div>
     </div>
     <div>
-        <table>
+        <table id="tables">
+            <tr class="firstrow">
+                <th>No.</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
             <tr>
                 <td>No.</td>
                 <td>Name</td>
@@ -38,5 +49,27 @@
             </tr>
         </table>
     </div>
-    </body>
+</body>
+<script>
+    let num = 1
+    function add_name() {
+        let x = document.getElementById("tables")
+        let y = document.getElementById("name").value
+        let z = document.getElementById("tell").value
+        x.innerHTML += "<tr>\
+            <td>" + num + "</td>\
+            <td>" + y + "</td>\
+            <td>" + z + "</td>\
+        </tr>"
+        num += 1
+    }
+    function setName() {
+        document.getElementById('username').innerText = document.getElementById("txtname").value + "'s Phone Book"
+
+    }
+    function setimage() {
+        document.getElementById('pictu').src = document.getElementById("txturl").value
+    }
+</script>
+
 </html>

@@ -1,0 +1,29 @@
+* {
+    margin: auto;
+    text-align: center;
+}
+
+#username {
+    margin-top: 16px;
+}
+
+#proflie img {
+    border-radius: 360px ;
+    width: 183px;
+    height: 183px;
+}
+
+input {
+    border: 0px;
+    background-color: whitesmoke;
+    padding: 4px;
+    border-radius: 16px;
+}
+
+button {
+    border: 0px;
+    background-color: rgb(25, 64, 148);
+    color : white;
+    padding: 4px;
+    border-radius: 4px;
+}
